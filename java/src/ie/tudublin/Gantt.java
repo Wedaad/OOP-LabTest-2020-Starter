@@ -78,12 +78,17 @@ public class Gantt extends PApplet {
 		//COME BACK TO THISSSSSS
 		for(int i = 0; i < tasks.size(); i++) {
 
-			//Task t = tasks.get(i);
+			Task t = tasks.get(i);
+
 			float x = map(i, 0, 9, border * 4, width - border);
-            float y = map(i, 0, 9, border + 15, height - 200);
+			float y = map(i, 0, 9, border + 15, height - border - 180);
+			float x2 = map(t.getStart(), 1, 30, border * 2, width - border);
+			float y2 = map(t.getEnd(), 1, 30, border * 2, width - border);
+
 			fill(rectsColour * i, 255, 255);
 
-			rect(x, y, border * 2, 35, 7);
+			//rect(x, y, border * 2, 35, 7);
+			rect(x, y, y2 - x2, 35, 7);
 
 
 		}
